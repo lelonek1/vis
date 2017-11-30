@@ -5,7 +5,7 @@
  * A dynamic, browser-based visualization library.
  *
  * @version 4.21.0
- * @date    2017-11-28
+ * @date    2017-11-29
  *
  * @license
  * Copyright (C) 2011-2017 Almende B.V, http://almende.com
@@ -10260,13 +10260,13 @@ Core.prototype.redraw = function () {
  * @protected
  */
 Core.prototype._redraw = function () {
-  this.redrawCount++;
   var resized = false;
   var options = this.options;
   var props = this.props;
   var dom = this.dom;
 
   if (!dom || !dom.container || dom.root.offsetWidth == 0) return; // when destroyed, or invisible
+  this.redrawCount++;
 
   DateUtil.updateHiddenDates(this.options.moment, this.body, this.options.hiddenDates);
 
